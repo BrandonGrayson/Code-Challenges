@@ -13,7 +13,5 @@ function collectOddValues(arr) {
         // has to call recursive function
     }
     helper(arr)
-
     return result
-
 }
