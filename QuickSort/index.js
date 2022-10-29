@@ -1,4 +1,4 @@
-function Pivot(arr, start = 0, end = arr.length - 1) {
+function pivot(arr, start = 0, end = arr.length - 1) {
 
     function swap(array, i, j) {
         let temp = array[i]
@@ -20,4 +20,16 @@ function Pivot(arr, start = 0, end = arr.length - 1) {
     return swapIndex
 }
 
-console.log(Pivot([9, 4, 8, 2, 1, 5, 7, 6, 3]))
+function quickSort(arr, left = 0, right = arr.length - 1) {
+
+    if (left < right) {
+        let pivotIdx = pivot(arr, left, right)
+
+        quickSort(arr, left, pivotIdx - 1)
+
+        quickSort(arr, pivotIdx + 1, right)
+    }
+
+    return arr
+
+}
